@@ -1,0 +1,32 @@
+{
+  "name": "yuki-server",
+  "version": "0.0.1",
+  "description": "yuki-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limichange/yuki-server.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "limichange <limichange@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/limichange/yuki-server/issues"
+  },
+  "homepage": "https://github.com/limichange/yuki-server#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.2.1",
+    "morgan": "^1.7.0",
+    "mysql": "^2.12.0",
+    "pug": "^2.0.0-beta6",
+    "sequelize": "^3.28.0"
+  }
+}
