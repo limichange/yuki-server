@@ -2,11 +2,13 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const restc = require('restc')
+const logger = require('morgan')
 
 const PORT = process.env.PORT || 3000
 
 const server = express()
 server.use(cors())
+server.use(logger('dev'))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(restc.express());
