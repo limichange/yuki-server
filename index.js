@@ -26,6 +26,6 @@ server.post('/user/signIn', (req, res) => {
   return res.json(userJSON)
 })
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`The API is listening on port ${PORT}`)
 })
