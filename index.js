@@ -3,14 +3,14 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const restc = require('restc')
 const logger = require('morgan')
-const lusca = require('lusca')
+// const lusca = require('lusca')
 
 const PORT = process.env.PORT || 3000
 
 const server = express()
 server.use(cors())
-server.use(lusca.xssProtection(true))
-server.use(lusca.csrf())
+// server.use(lusca.xssProtection(true))
+// server.use(lusca.csrf())
 server.use(logger('dev'))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: false }))
