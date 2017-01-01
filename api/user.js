@@ -1,5 +1,4 @@
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
 const secret = 'blog.limichange.com'
 const dbModels = require('../db/models')
 const uuidV4 = require('uuid/v4')
@@ -15,11 +14,7 @@ module.exports = {
     })
     .then((user) => {
       if (bcrypt.compareSync(password, user.password)) {
-        const token = jwt.sign({
-          uuid: user.uuid
-        }, secret, {
-          expiresIn: '7d'
-        })
+        const token = uuidV4()
 
         res.json({
           token,
