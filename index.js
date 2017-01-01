@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const restc = require('restc')
 const logger = require('morgan')
-const dbModels = require('./db/models')
 const apiRouter = require('./api')
 
 const PORT = process.env.PORT || 3000

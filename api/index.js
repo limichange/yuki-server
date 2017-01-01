@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+const user = require('./user')
 
 const userJSON = {
   nickname: 'houyao',
@@ -38,9 +39,7 @@ router.get('/me', (req, res) => {
   return res.json(userJSON)
 })
 
-router.post('/user/signIn', (req, res) => {
-  console.log(req.body)
-  return res.json(userJSON)
-})
+router.post('/user/signIn', user.signIn)
+router.post('/user/signUp', user.signUp)
 
 module.exports = router

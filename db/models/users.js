@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('User', {
+  var User = sequelize.define('Users', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -21,6 +21,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     username: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    uuid: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    salt: {
       type: DataTypes.STRING,
       allowNull: false
     }
