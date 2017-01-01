@@ -4,6 +4,7 @@ const cors = require('cors')
 const restc = require('restc')
 const logger = require('morgan')
 const apiRouter = require('./api')
+require('./auth').init()
 
 const PORT = process.env.PORT || 3000
 
