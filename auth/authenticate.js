@@ -17,18 +17,6 @@ const authenticate = {
         } else {
           return next(new Error('Auth Error'))
         }
-        // } else if (isBearerAutorizationHeader(req)) {
-        //     return next(new errors.UnauthorizedError({
-        //         message: i18n.t('errors.middleware.auth.accessDenied')
-        //     }))
-        // } else if (req.client) {
-        //     req.user = {id: 0}
-        //     return next()
-        // }
-        //
-        // return next(new errors.UnauthorizedError({
-        //     message: i18n.t('errors.middleware.auth.accessDenied')
-        // }))
       }
     )(req, res, next)
   }
