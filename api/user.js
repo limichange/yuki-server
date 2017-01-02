@@ -55,16 +55,17 @@ module.exports = {
   },
 
   signOut (req, res, next) {
-    const { token } = req.body
-
-    console.log(token)
+    const { token } = req.user
 
     dbModels.Accesstokens.findOne({
       where: {
         token
       }
-    }).then((res) => {
-      console.log(res)
+    }).then((token) => {
+      return token.update({
+        expires: 0
+      })
+    }).then(() => {
       res.json({
         msg: 'ok'
       })

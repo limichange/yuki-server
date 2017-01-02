@@ -11,28 +11,34 @@ const strategies = {
    */
   bearerStrategy (accessToken, done) {
     return dbModels.Accesstokens.findOne({
-      token: accessToken,
+      where: {
+        token: accessToken
+      },
       order: 'createdAt DESC'
     })
     .then((model) => {
       if (model) {
-        var token = model.toJSON();
+        var token = model.toJSON()
+        console.log(token.expires, Date.now())
         if (token.expires > Date.now()) {
           return dbModels.Users.findOne({
-            id: token.user_id
+            where: {
+              id: token.user_id
+            }
           })
           .then(function then(model) {
             if (model) {
-              return done(null, model.toJSON())
+              model.token = accessToken
+              return done(null, model)
             } else {
-              return done(null, false);
+              return done(null, false)
             }
           })
         } else {
-          return done(null, false);
+          return done(null, false)
         }
       } else {
-        return done(null, false);
+        return done(null, false)
       }
     })
   }

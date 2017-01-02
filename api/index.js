@@ -42,6 +42,6 @@ router.get('/me', auth.authenticate.authenticateUser, (req, res) => {
 
 router.post('/user/signIn', user.signIn)
 router.post('/user/signUp', user.signUp)
-router.post('/user/signOut', user.signOut)
+router.post('/user/signOut', auth.authenticate.authenticateUser, user.signOut)
 
 module.exports = router

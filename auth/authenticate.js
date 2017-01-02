@@ -9,6 +9,8 @@ const authenticate = {
           return next(err)
         }
 
+        console.log(user)
+
         if (user) {
           req.authInfo = info
           req.user = user
