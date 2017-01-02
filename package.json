@@ -15,7 +15,7 @@
     "express"
   ],
   "author": "limichange <limichange@hotmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/limichange/yuki-server/issues"
   },

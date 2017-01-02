@@ -31,3 +31,7 @@ $ nodemon index.js
 ```shell
 $ ./migration.sh
 ```
+
+## License
+Apache-2.0
+Copyright (c) 2016-2017 Limichange
