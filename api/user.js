@@ -52,5 +52,22 @@ module.exports = {
         msg: 'ok'
       })
     })
+  },
+
+  signOut (req, res, next) {
+    const { token } = req.body
+
+    console.log(token)
+
+    dbModels.Accesstokens.findOne({
+      where: {
+        token
+      }
+    }).then((res) => {
+      console.log(res)
+      res.json({
+        msg: 'ok'
+      })
+    })
   }
 }
