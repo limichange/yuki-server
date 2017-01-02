@@ -31,11 +31,9 @@
     "passport": "^0.3.2",
     "passport-http-bearer": "^1.0.1",
     "pug": "^2.0.0-beta6",
+    "request": "^2.79.0",
     "restc": "0.0.4",
     "sequelize": "^3.28.0",
     "uuid": "^3.0.1"
-  },
-  "devDependencies": {
-    "request": "^2.79.0"
   }
 }
