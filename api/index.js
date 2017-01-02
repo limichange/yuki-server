@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 const user = require('./user')
+const auth = require('../auth')
 
 const userJSON = {
   nickname: 'houyao',
@@ -35,7 +36,7 @@ router.get('/feed', (req, res) => {
   return res.json(feeds)
 })
 
-router.get('/me', (req, res) => {
+router.get('/me', auth.authenticate.authenticateUser, (req, res) => {
   return res.json(userJSON)
 })
 

@@ -5,5 +5,6 @@ const authStrategies = require('./auth-strategies')
 module.exports = {
   init () {
     passport.use(new BearerStrategy(authStrategies.bearerStrategy))
+    return passport
   }
 }

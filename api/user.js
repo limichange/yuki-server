@@ -19,19 +19,10 @@ module.exports = {
         dbModels.Accesstokens.create({
           token,
           user_id: user.id,
-          expires: Date.now() + 1000 * 60
-        })
-
-        dbModels.Accesstokens.findAll({
-          include: [{
-            model: dbModels.Users
-          }]
-        }).then((tokens) => {
-          console.log(tokens)
+          expires: (Date.now() + 1000 * 60 * 60 * 60)
         })
 
         res.json({
-          tokens,
           token,
           msg: 'ok'
         })

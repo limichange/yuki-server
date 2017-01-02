@@ -9,27 +9,28 @@ const strategies = {
    * application, which is issued an access token to make requests on behalf of
    * the authorizing user.
    */
-  bearerStrategy: function bearerStrategy(accessToken, done) {
+  bearerStrategy (accessToken, done) {
     return dbModels.Accesstokens.findOne({
-      token: accessToken
+      token: accessToken,
+      order: 'createdAt DESC'
     })
     .then((model) => {
       if (model) {
         var token = model.toJSON();
         if (token.expires > Date.now()) {
-            return dbModels.Users.findOne({
-              id: token.user_id
-            })
-            .then(function then(model) {
-              if (model) {
-                return done(null, model.toJSON())
-              } else {
-                return done(null, false);
-              }
-            })
-          } else {
-            return done(null, false);
-          }
+          return dbModels.Users.findOne({
+            id: token.user_id
+          })
+          .then(function then(model) {
+            if (model) {
+              return done(null, model.toJSON())
+            } else {
+              return done(null, false);
+            }
+          })
+        } else {
+          return done(null, false);
+        }
       } else {
         return done(null, false);
       }

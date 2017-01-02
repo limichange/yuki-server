@@ -11,7 +11,8 @@
     "url": "git+https://github.com/limichange/yuki-server.git"
   },
   "keywords": [
-    "vue"
+    "vue",
+    "express"
   ],
   "author": "limichange <limichange@hotmail.com>",
   "license": "MIT",
