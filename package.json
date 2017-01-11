@@ -33,7 +33,7 @@
     "pug": "^2.0.0-beta6",
     "request": "^2.79.0",
     "restc": "0.0.4",
-    "sequelize": "^3.28.0",
+    "sequelize": "^3.29.0",
     "uuid": "^3.0.1"
   }
 }
